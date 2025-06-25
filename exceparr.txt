@@ -1,0 +1,38 @@
+import java.util.*;
+class exception4 {
+
+    public static void main(String args[])
+    {
+      int arr[]= new int[5];
+      Scanner scn = new Scanner(System.in);
+      System.out.println("enter elements of array ");
+      for ( int i =0 ; i < 5 ; i++){
+          arr[i]= scn.nextInt();
+      }
+      System.out.println("enter the index you want to access :");
+      int ind = scn.nextInt();
+      
+      
+      try {
+
+        int  result = arr[0]/arr[1] ;
+        System.out.print(result);
+      }
+      catch(ArithmeticException e)
+      {
+        System.out.println("DENOMINATOR IS ZERO ");
+      
+      }
+      try{
+        System.out.println(arr[ind]);
+      }
+      catch (ArrayIndexOutOfBoundsException e){
+      System.out.println("array index not defined");
+    }
+      finally{
+
+        System.out.println("finally block executed ");
+      }
+      
+    }
+}
